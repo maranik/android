@@ -3,21 +3,21 @@
     <!-- App name  and other strings-->
     <string name="app_name">CloudBag</string>
     <!--<string name="app_name">ownCloud</string>-->
-    <string name="account_type">owncloud</string>	<!-- better if was a domain name; but changing it now would require migrate accounts when the app is updated -->
-    <string name="authority">org.owncloud</string>	<!-- better if was the app package with ".provider" appended ; it identifies the provider -->
-    <string name ="db_file">owncloud.db</string>
-    <string name ="db_name">ownCloud</string>
-    <string name ="data_folder">owncloud</string>
-    <string name ="log_name">Owncloud_</string>
+    <string name="account_type">cloudbag</string>	<!-- better if was a domain name; but changing it now would require migrate accounts when the app is updated -->
+    <string name="authority">it.tnet</string>	<!-- better if was the app package with ".provider" appended ; it identifies the provider -->
+    <string name ="db_file">cloudbag.db</string>
+    <string name ="db_name">cloudbag</string>
+    <string name ="data_folder">cloudbag</string>
+    <string name ="log_name">cloudbag_</string>
     <string name ="default_display_name_for_root_folder">CloudBag</string>
     <!--<string name ="default_display_name_for_root_folder">ownCloud</string>-->
-    <string name ="user_agent">Mozilla/5.0 (Android) ownCloud-android/%1$s</string>
+    <string name ="user_agent">Mozilla/5.0 (Android) cloudbag-android</string>
     
     <!-- URLs and flags related -->
     <string name="server_url">https://cloudbag.tnet.it</string>
     <bool name="show_server_url_input">false</bool>
     <bool name="show_welcome_link">false</bool>
-	<string name="welcome_link_url">"https://owncloud.com/mobile/new"</string>
+	<string name="welcome_link_url">https://owncloud.com/mobile/new</string>
 	<string name="share_api_link"></string>
     
     <!-- Flags to setup the authentication methods available in the app -->
