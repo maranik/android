@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Android programėlė</string>
   <string name="about_version">versija %1$s</string>
   <string name="actionbar_sync">Atnaujinti paskyrą</string>
   <string name="actionbar_upload">Įkelti</string>

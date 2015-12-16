@@ -24,7 +24,6 @@ package com.owncloud.android.operations;
 import java.io.File;
 import java.io.IOException;
 
-import com.owncloud.android.MainApp;
 import com.owncloud.android.datamodel.OCFile;
 import com.owncloud.android.lib.common.OwnCloudClient;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;

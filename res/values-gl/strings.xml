@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">Aplicación Android %1$s</string>
   <string name="about_version">versión %1$s</string>
   <string name="actionbar_sync">Actualizar a conta</string>
   <string name="actionbar_upload">Enviar</string>

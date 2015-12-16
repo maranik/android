@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Android 應用程式</string>
   <string name="about_version">版本 %1$s</string>
   <string name="actionbar_sync">更新檔案列表</string>
   <string name="actionbar_upload">上傳檔案</string>

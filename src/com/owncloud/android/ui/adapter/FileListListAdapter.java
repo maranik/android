@@ -24,7 +24,6 @@
 package com.owncloud.android.ui.adapter;
 
 
-import java.io.File;
 import java.util.Vector;
 
 import android.accounts.Account;

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s កម្មវិធីអានដ្រយ</string>
   <string name="about_version">ជំនាន់ %1$s</string>
   <string name="actionbar_sync">គណនីឱ្យថ្មីឡើងវិញ</string>
   <string name="actionbar_upload">ផ្ទុក​ឡើង</string>

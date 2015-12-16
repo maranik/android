@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">Android-aplikaĵo %1$s</string>
   <string name="about_version">eldono %1$s</string>
   <string name="actionbar_upload">Alŝuti dosieron</string>
   <string name="actionbar_upload_from_apps">Enhavo el aliaj aplikaĵoj</string>

@@ -40,6 +40,10 @@ android {
             assets.srcDirs = ['res']
         }
 
+        defaultConfig {
+            applicationId "it.tnet.cloudbag.android"
+        }
+
         // Move the tests to tests/java, tests/res, etc...
         instrumentTest.setRoot('tests')
 

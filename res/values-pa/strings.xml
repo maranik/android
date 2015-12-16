@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s ਐਡਰਾਇਡ ਐਪ</string>
   <string name="about_version">ਵਰਜਨ %1$s</string>
   <string name="actionbar_sync">ਅਕਾਊਂਟ ਤਾਜ਼ਾ ਕਰੋ</string>
   <string name="actionbar_upload">ਅੱਪਲੋਡ</string>

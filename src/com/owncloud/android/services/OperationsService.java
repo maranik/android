@@ -68,7 +68,6 @@ import com.owncloud.android.operations.UpdateShareViaLinkOperation;
 import com.owncloud.android.operations.common.SyncOperation;
 
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;

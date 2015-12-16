@@ -40,7 +40,6 @@ import com.owncloud.android.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.android.ui.activity.FileActivity;
-import com.owncloud.android.ui.activity.ShareActivity;
 import com.owncloud.android.ui.adapter.ShareUserListAdapter;
 
 import java.util.ArrayList;

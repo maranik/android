@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Apl Android</string>
   <string name="about_version">versi %1$s</string>
   <string name="actionbar_sync">Segarkan akun</string>
   <string name="actionbar_upload">Unggah</string>

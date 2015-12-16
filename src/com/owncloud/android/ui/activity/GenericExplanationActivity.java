@@ -35,7 +35,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.owncloud.android.R;
-import com.owncloud.android.utils.DisplayUtils;
 
 
 /**

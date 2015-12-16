@@ -28,12 +28,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.provider.OpenableColumns;
-
-import com.owncloud.android.MainApp;
-import com.owncloud.android.lib.common.utils.Log_OC;
-
-import java.io.File;
 
 
 /**

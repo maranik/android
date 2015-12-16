@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Android Uygulaması</string>
   <string name="about_version">sürüm %1$s</string>
   <string name="actionbar_sync">Hesabı yenile</string>
   <string name="actionbar_upload">Yükle</string>

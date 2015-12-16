@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s 안드로이드 앱</string>
   <string name="about_version">버전 %1$s</string>
   <string name="actionbar_sync">계정 새로 고침</string>
   <string name="actionbar_upload">업로드</string>

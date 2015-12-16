@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s ஆன்றாஇட் மென்பொருள்</string>
   <string name="about_version">பதிப்பு எண் %1$s</string>
   <string name="actionbar_sync">கணக்கை புதுப்பி </string>
   <string name="actionbar_upload">பதிவேற்று</string>

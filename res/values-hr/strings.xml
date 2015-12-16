@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Android aplikacija</string>
   <string name="about_version">verzija %1$s</string>
   <string name="actionbar_sync">Osvježi račun</string>
   <string name="actionbar_upload">Učitaj</string>

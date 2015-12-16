@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s Андроид апликација</string>
   <string name="about_version">верзија %1$s</string>
   <string name="actionbar_sync">Освежи сметка</string>
   <string name="actionbar_upload">Подигни</string>

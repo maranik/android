@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="about_android">%1$s অ্যান্ড্রয়েড অ্যাপ</string>
   <string name="about_version">সংষ্করন %1$s</string>
   <string name="actionbar_sync">একাউন্ট নবোদ্যম কর</string>
   <string name="actionbar_upload">আপলোড</string>
