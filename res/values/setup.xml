@@ -17,7 +17,9 @@
     <string name="server_url">"https://cloudbag.tnet.it"</string>
     <bool name="show_server_url_input">false</bool>
     <bool name="show_welcome_link">false</bool>
-	<string name="welcome_link_url">"https://owncloud.com/mobile/new"</string>
+	<string name="welcome_link_url">"http://portal.tnet.it/cart.php?a=add&amp;pid=81"</string>
+	<string name="upgrade_url">"http://portal.tnet.it/clientarea.php"</string>
+	<!--<string name="welcome_link_url">"https://owncloud.com/mobile/new"</string>-->
 	<string name="share_api_link"></string>
     
     <!-- Flags to setup the authentication methods available in the app -->
@@ -48,11 +50,16 @@
     <bool name="multiaccount_support">true</bool>
     
     <!-- Help, imprint and feedback -->
-    <bool name="help_enabled">false</bool>
+    <bool name="help_enabled">true</bool>
     <bool name="imprint_enabled">false</bool> 
+    <bool name="info_enabled">true</bool>
+    <bool name="upgrade_enabled">true</bool>
+    <bool name="terms_conditions_enabled">true</bool>
     <bool name="recommend_enabled">true</bool>
     <bool name="feedback_enabled">true</bool>
-    <string name="url_help">"http://tnet.it/contatti"</string>
+    <string name="url_help">"http://www.tnet.it/cloudbag-faq"</string>
+    <string name="url_info">"http://www.tnet.it/chi-siamo-app"</string>
+    <string name="url_terms_conditions">"http://tnet.it/privacy-policy"</string>
     <string name="url_imprint"></string>
     <string name="mail_recommend">"mailto:"</string>
     <string name="mail_feedback">"mailto:support@tnet.it"</string>

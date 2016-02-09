@@ -70,7 +70,10 @@
     <Preference android:title="@string/prefs_recommend" android:key="recommend" />
     <Preference android:title="@string/prefs_feedback" android:key="feedback" />
     <Preference android:title="@string/prefs_imprint" android:key="imprint" />
-                        
+    <Preference android:title="@string/prefs_info" android:key="info" />
+    <Preference android:title="@string/prefs_terms_conditions" android:key="terms_conditions" />
+    <Preference android:title="@string/prefs_upgrade" android:key="upgrade" />
+
 	<Preference 		android:id="@+id/about_app" 
         				android:title="@string/about_title" 
         				android:key="about_app" />

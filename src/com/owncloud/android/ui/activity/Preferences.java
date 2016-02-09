@@ -262,6 +262,69 @@ public class Preferences extends PreferenceActivity
             
         }
 
+        boolean termsEnabled = getResources().getBoolean(R.bool.terms_conditions_enabled);
+        Preference pTerms =  findPreference("terms_conditions");
+        if (pTerms != null ){
+            if (termsEnabled) {
+                pTerms.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        String termsWeb   =(String) getText(R.string.url_terms_conditions);
+                        if (termsWeb != null && termsWeb.length() > 0) {
+                            Uri uriUrl = Uri.parse(termsWeb);
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                            startActivity(intent);
+                        }
+                        return true;
+                    }
+                });
+            } else {
+                preferenceCategory.removePreference(pTerms);
+            }
+        }
+
+        boolean infoEnabled = getResources().getBoolean(R.bool.info_enabled);
+        Preference pInfo =  findPreference("info");
+        if (pInfo != null ){
+            if (infoEnabled) {
+                pInfo.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        String infoWeb   =(String) getText(R.string.url_info);
+                        if (infoWeb != null && infoWeb.length() > 0) {
+                            Uri uriUrl = Uri.parse(infoWeb);
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                            startActivity(intent);
+                        }
+                        return true;
+                    }
+                });
+            } else {
+                preferenceCategory.removePreference(pInfo);
+            }
+        }
+
+        boolean upgradeEnabled = getResources().getBoolean(R.bool.upgrade_enabled);
+        Preference pUpgrade =  findPreference("upgrade");
+        if (pUpgrade != null ){
+            if (upgradeEnabled) {
+                pUpgrade.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        String upgradeWeb =(String) getText(R.string.upgrade_url);
+                        if (upgradeWeb != null && upgradeWeb.length() > 0) {
+                            Uri uriUrl = Uri.parse(upgradeWeb);
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                            startActivity(intent);
+                        }
+                        return true;
+                    }
+                });
+            } else {
+                preferenceCategory.removePreference(pUpgrade);
+            }
+        }
+
         if (BuildConfig.DEBUG) {
             Preference pLog =  findPreference("log");
             if (pLog != null ){
@@ -285,9 +348,9 @@ public class Preferences extends PreferenceActivity
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
 
-                        Intent intent = new Intent(Intent.ACTION_SENDTO); 
+                        Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("text/plain");
-                        intent.setData(Uri.parse(getString(R.string.mail_recommend))); 
+//                        intent.setData(Uri.parse(getString(R.string.mail_recommend)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
                         
                         String appName = getString(R.string.app_name);
@@ -304,7 +367,7 @@ public class Preferences extends PreferenceActivity
                         
                         intent.putExtra(Intent.EXTRA_SUBJECT, recommendSubject);
                         intent.putExtra(Intent.EXTRA_TEXT, recommendText);
-                        startActivity(intent);
+                        startActivity(Intent.createChooser(intent, getResources().getText(R.string.send_to)));
 
                         return(true);
 
