@@ -58,7 +58,7 @@
     <bool name="recommend_enabled">true</bool>
     <bool name="feedback_enabled">true</bool>
     <string name="url_help">"http://www.tnet.it/cloudbag-faq"</string>
-    <string name="url_info">"http://www.tnet.it/chi-siamo-app"</string>
+    <string name="url_info">"http://www.tnet.it/chi-siamo"</string>
     <string name="url_terms_conditions">"http://tnet.it/privacy-policy"</string>
     <string name="url_imprint"></string>
     <string name="mail_recommend">"mailto:"</string>

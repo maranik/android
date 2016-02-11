@@ -290,7 +290,7 @@ public class Preferences extends PreferenceActivity
                 pInfo.setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        String infoWeb   =(String) getText(R.string.url_info);
+                        String infoWeb = (String) getText(R.string.url_info);
                         if (infoWeb != null && infoWeb.length() > 0) {
                             Uri uriUrl = Uri.parse(infoWeb);
                             Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
