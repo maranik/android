@@ -43,7 +43,8 @@
   <string name="prefs_log_delete_history_button">Elimina la cronologia</string>
   <string name="prefs_help">Aiuto</string>
   <string name="prefs_recommend">Consiglia a un amico</string>
-  <string name="prefs_feedback">Segnalazioni CloudBag</string>
+  <string name="prefs_feedback">Invia segnalazione</string>
+  <string name="prefs_feedback_subject">Segnalazioni Cloudbag</string>
   <string name="prefs_imprint">Imprint</string>
   <string name="prefs_info">Info su T.net Italia</string>
   <string name="prefs_terms_conditions">Termini e privacy</string>

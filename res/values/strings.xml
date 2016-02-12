@@ -46,6 +46,7 @@
     <string name="prefs_help">Help</string>
     <string name="prefs_recommend">Recommend to a friend</string>
     <string name="prefs_feedback">Feedback</string>
+    <string name="prefs_feedback_subject">Cloudbag feedback</string>
     <string name="prefs_imprint">Imprint</string>
     <string name="prefs_info">Info about T.net Italy</string>
     <string name="prefs_terms_conditions">Terms and conditions</string>
