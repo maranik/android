@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
 
@@ -74,6 +74,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
+        applicationId "it.tnet.cloudbag.androidapp"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // arguments to be passed to functional tests

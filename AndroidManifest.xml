@@ -19,8 +19,8 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.owncloud.android"
-    android:versionCode="20200000"
-    android:versionName="2.2.0" >
+    android:versionCode="10200000"
+    android:versionName="1.2.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -43,6 +43,8 @@
     <!-- WRITE_EXTERNAL_STORAGE may be enabled or disabled by the user after installation in
         API >= 23; the app needs to handle this -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- Next permissions are always approved in installation time,
         the apps needs to do nothing special in runtime -->

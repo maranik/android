@@ -175,6 +175,68 @@ public class Preferences extends PreferenceActivity {
                 preferenceCategory.removePreference(pHelp);
             }
         }
+
+        boolean termsEnabled = getResources().getBoolean(R.bool.terms_conditions_enabled);
+        Preference pTerms =  findPreference("terms_conditions");
+        if (pTerms != null ){
+                if (termsEnabled) {
+                        pTerms.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                                @Override
+                                public boolean onPreferenceClick(Preference preference) {
+                                        String termsWeb   =(String) getText(R.string.url_terms_conditions);
+                                        if (termsWeb != null && termsWeb.length() > 0) {
+                                                Uri uriUrl = Uri.parse(termsWeb);
+                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                                                startActivity(intent);
+                                            }
+                                        return true;
+                                    }
+                            });
+                    } else {
+                        preferenceCategory.removePreference(pTerms);
+                    }
+            }
+
+        boolean infoEnabled = getResources().getBoolean(R.bool.info_enabled);
+        Preference pInfo =  findPreference("info");
+        if (pInfo != null ){
+                if (infoEnabled) {
+                        pInfo.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                                @Override
+                                public boolean onPreferenceClick(Preference preference) {
+                                        String infoWeb = (String) getText(R.string.url_info);
+                                        if (infoWeb != null && infoWeb.length() > 0) {
+                                                Uri uriUrl = Uri.parse(infoWeb);
+                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                                                startActivity(intent);
+                                            }
+                                        return true;
+                                    }
+                            });
+                    } else {
+                        preferenceCategory.removePreference(pInfo);
+                    }
+            }
+        boolean upgradeEnabled = getResources().getBoolean(R.bool.upgrade_enabled);
+        Preference pUpgrade =  findPreference("upgrade");
+        if (pUpgrade != null ){
+                if (upgradeEnabled) {
+                        pUpgrade.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                                @Override
+                                public boolean onPreferenceClick(Preference preference) {
+                                        String upgradeWeb =(String) getText(R.string.upgrade_url);
+                                        if (upgradeWeb != null && upgradeWeb.length() > 0) {
+                                                Uri uriUrl = Uri.parse(upgradeWeb);
+                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+                                                startActivity(intent);
+                                            }
+                                        return true;
+                                    }
+                            });
+                    } else {
+                        preferenceCategory.removePreference(pUpgrade);
+                    }
+            }
         
        boolean recommendEnabled = getResources().getBoolean(R.bool.recommend_enabled);
        Preference pRecommend =  findPreference("recommend");
@@ -219,7 +281,7 @@ public class Preferences extends PreferenceActivity {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
                         String feedbackMail   =(String) getText(R.string.mail_feedback);
-                        String feedback   =(String) getText(R.string.prefs_feedback) +
+                        String feedback   =(String) getText(R.string.prefs_feedback_subject) +
                                 " - android v" + appVersion;
                         Intent intent = new Intent(Intent.ACTION_SENDTO); 
                         intent.setType("text/plain");
