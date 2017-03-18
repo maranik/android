@@ -170,7 +170,6 @@ Aşağıda göstərilən %5$s-də olan daxili və xarici fayl(lar) link edilmiş
   <string name="activity_chooser_title">Linki yollayın ...</string>
   <string name="oauth_check_onoff">oAuth2 ilə qeydiyyatdan keçin</string>
   <string name="oauth_login_connection">oAuth2 serverinə qoşulur...</string>
-  <string name="ssl_validator_header">Sayta olan identifikasiya yoxlanıla bilməz</string>
   <string name="ssl_validator_reason_cert_not_trusted">Server sertifikati inamlı deyil</string>
   <string name="ssl_validator_reason_cert_expired">- Server sertifikatının vaxtı bitmişdir</string>
   <string name="ssl_validator_reason_cert_not_yet_valid">- Server sertifikatının düzgün tarixi gələcəkdədir</string>
@@ -254,4 +253,5 @@ inzibatçınızla əlaqə saxlayasınız.</string>
   <string name="share_privilege_can_share">yayımlaya bilərsiniz</string>
   <string name="share_privilege_can_edit">dəyişmək olar</string>
   <string name="share_privilege_can_edit_delete">sil</string>
+  <string name="uploads_view_upload_status_failed_storage_not_available_error">İnformasiya daşıyıcısı mövcud deyil</string>
 </resources>

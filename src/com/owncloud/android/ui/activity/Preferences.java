@@ -21,7 +21,6 @@
  */
 package com.owncloud.android.ui.activity;
 
-import android.accounts.Account;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -39,6 +38,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
@@ -47,11 +47,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.owncloud.android.BuildConfig;
 import com.owncloud.android.R;
-import com.owncloud.android.authentication.AccountUtils;
 import com.owncloud.android.datamodel.OCFile;
 import com.owncloud.android.db.PreferenceManager.InstantUploadsConfiguration;
 import com.owncloud.android.lib.common.utils.Log_OC;
@@ -80,8 +78,6 @@ public class Preferences extends PreferenceActivity {
     private CheckBoxPreference pCode;
     private Preference pAboutApp;
     private AppCompatDelegate mDelegate;
-
-    private PreferenceCategory mAccountsPrefCategory = null;
 
     private String mUploadPath;
     private String mUploadVideoPath;
@@ -175,68 +171,6 @@ public class Preferences extends PreferenceActivity {
                 preferenceCategory.removePreference(pHelp);
             }
         }
-
-        boolean termsEnabled = getResources().getBoolean(R.bool.terms_conditions_enabled);
-        Preference pTerms =  findPreference("terms_conditions");
-        if (pTerms != null ){
-                if (termsEnabled) {
-                        pTerms.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                                @Override
-                                public boolean onPreferenceClick(Preference preference) {
-                                        String termsWeb   =(String) getText(R.string.url_terms_conditions);
-                                        if (termsWeb != null && termsWeb.length() > 0) {
-                                                Uri uriUrl = Uri.parse(termsWeb);
-                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
-                                                startActivity(intent);
-                                            }
-                                        return true;
-                                    }
-                            });
-                    } else {
-                        preferenceCategory.removePreference(pTerms);
-                    }
-            }
-
-        boolean infoEnabled = getResources().getBoolean(R.bool.info_enabled);
-        Preference pInfo =  findPreference("info");
-        if (pInfo != null ){
-                if (infoEnabled) {
-                        pInfo.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                                @Override
-                                public boolean onPreferenceClick(Preference preference) {
-                                        String infoWeb = (String) getText(R.string.url_info);
-                                        if (infoWeb != null && infoWeb.length() > 0) {
-                                                Uri uriUrl = Uri.parse(infoWeb);
-                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
-                                                startActivity(intent);
-                                            }
-                                        return true;
-                                    }
-                            });
-                    } else {
-                        preferenceCategory.removePreference(pInfo);
-                    }
-            }
-        boolean upgradeEnabled = getResources().getBoolean(R.bool.upgrade_enabled);
-        Preference pUpgrade =  findPreference("upgrade");
-        if (pUpgrade != null ){
-                if (upgradeEnabled) {
-                        pUpgrade.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                                @Override
-                                public boolean onPreferenceClick(Preference preference) {
-                                        String upgradeWeb =(String) getText(R.string.upgrade_url);
-                                        if (upgradeWeb != null && upgradeWeb.length() > 0) {
-                                                Uri uriUrl = Uri.parse(upgradeWeb);
-                                                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
-                                                startActivity(intent);
-                                            }
-                                        return true;
-                                    }
-                            });
-                    } else {
-                        preferenceCategory.removePreference(pUpgrade);
-                    }
-            }
         
        boolean recommendEnabled = getResources().getBoolean(R.bool.recommend_enabled);
        Preference pRecommend =  findPreference("recommend");
@@ -281,7 +215,7 @@ public class Preferences extends PreferenceActivity {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
                         String feedbackMail   =(String) getText(R.string.mail_feedback);
-                        String feedback   =(String) getText(R.string.prefs_feedback_subject) +
+                        String feedback   =(String) getText(R.string.prefs_feedback) +
                                 " - android v" + appVersion;
                         Intent intent = new Intent(Intent.ACTION_SENDTO); 
                         intent.setType("text/plain");
@@ -296,6 +230,24 @@ public class Preferences extends PreferenceActivity {
                 });
             } else {
                 preferenceCategory.removePreference(pFeedback);
+            }
+        }
+
+        boolean privacyPolicyEnabled = getResources().getBoolean(R.bool.privacy_policy_enabled);
+        Preference pPrivacyPolicy =  findPreference("privacyPolicy");
+        if (pPrivacyPolicy != null){
+            if (privacyPolicyEnabled) {
+                pPrivacyPolicy.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        Intent privacyPolicyIntent = new Intent(getApplicationContext(), PrivacyPolicyActivity.class);
+                        startActivity(privacyPolicyIntent);
+
+                        return true;
+                    }
+                });
+            } else {
+                preferenceCategory.removePreference(pPrivacyPolicy);
             }
         }
 
@@ -558,7 +510,7 @@ public class Preferences extends PreferenceActivity {
                 }
                 appPrefs.putBoolean(PassCodeActivity.PREFERENCE_SET_PASSCODE, true);
                 appPrefs.commit();
-                Toast.makeText(this, R.string.pass_code_stored, Toast.LENGTH_LONG).show();
+                showSnackMessage(R.string.pass_code_stored);
             }
 
         } else if (requestCode == ACTION_CONFIRM_PASSCODE && resultCode == RESULT_OK) {
@@ -568,8 +520,7 @@ public class Preferences extends PreferenceActivity {
                         .getDefaultSharedPreferences(getApplicationContext()).edit();
                 appPrefs.putBoolean(PassCodeActivity.PREFERENCE_SET_PASSCODE, false);
                 appPrefs.commit();
-
-                Toast.makeText(this, R.string.pass_code_removed, Toast.LENGTH_LONG).show();
+                showSnackMessage(R.string.pass_code_removed);
             }
         }
     }
@@ -735,6 +686,21 @@ public class Preferences extends PreferenceActivity {
         SharedPreferences.Editor editor = appPrefs.edit();
         editor.putString("instant_upload_source_path", mSourcePath);
         editor.commit();
+    }
+
+
+    /**
+     * Show a temporary message in a Snackbar bound to the content view
+     *
+     * @param messageResource       Message to show.
+     */
+    private void showSnackMessage(int messageResource) {
+        Snackbar snackbar = Snackbar.make(
+            findViewById(android.R.id.content),
+            messageResource,
+            Snackbar.LENGTH_LONG
+        );
+        snackbar.show();
     }
 
 }

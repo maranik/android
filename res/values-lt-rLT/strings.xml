@@ -189,7 +189,6 @@
   <string name="wait_for_tmp_copy_from_private_storage">Kopijuoti failą iš privačios talpyklos</string>
   <string name="oauth_check_onoff">Prisijungti naudojant oAuth2</string>
   <string name="oauth_login_connection">Jungiamasi prie oAuth2 serverio...</string>
-  <string name="ssl_validator_header">Serverio tapatybė negali būti patikrinta</string>
   <string name="ssl_validator_reason_cert_not_trusted">- Nepatikimas serverio sertifikatas</string>
   <string name="ssl_validator_reason_cert_expired">- Serverio sertifikatas galiojimo laikas pasibaigęs</string>
   <string name="ssl_validator_reason_cert_not_yet_valid">- Serverio sertifikatas yra pernelyg naujas</string>
@@ -319,4 +318,5 @@
   <string name="share_privilege_can_edit_create">sukurti</string>
   <string name="share_privilege_can_edit_change">keisti</string>
   <string name="share_privilege_can_edit_delete">ištrinti</string>
+  <string name="uploads_view_upload_status_failed_storage_not_available_error">Saugykla nepasiekiama</string>
 </resources>
